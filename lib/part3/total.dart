@@ -19,41 +19,9 @@ class Total extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Padding(
-                padding: const EdgeInsets.only(left: 9, top: 25, bottom: 12),
-                child: SizedBox(
-                  height: 27,
-                  child: TextButton(
-                    onPressed: () {
-                      Navigator.pop(context);
-                    },
-                    style: TextButton.styleFrom(
-                      padding: EdgeInsets.zero,
-                      tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                    ),
-                    child: Container(
-                      width: 100,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(7),
-                        color: white2,
-                      ),
-                      child: Row(
-                        children: [
-                          Icon(
-                            arrowLeft,
-                            color: white6,
-                          ),
-                          const Text1(
-                            text: "назад",
-                            fontWeight: FontWeight.w400,
-                            fonSize: 16,
-                            textColor: white6,
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
+              const Padding(
+                padding: EdgeInsets.only(left: 9, top: 25, bottom: 12),
+                child: BB(),
               ),
               const Padding(
                 padding: EdgeInsets.only(left: 9, bottom: 15),

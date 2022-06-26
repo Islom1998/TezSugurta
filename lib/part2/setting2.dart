@@ -32,42 +32,10 @@ class _Setting2State extends State<Setting2> {
               width: 217,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  SizedBox(
-                    height: 27,
-                    child: TextButton(
-                      onPressed: () {
-                        Navigator.pop(context);
-                      },
-                      style: TextButton.styleFrom(
-                        padding: EdgeInsets.zero,
-                        tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                      ),
-                      child: Container(
-                        width: 100,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(7),
-                          color: white2,
-                        ),
-                        child: Row(
-                          children: [
-                            Icon(
-                              arrowLeft,
-                              color: white6,
-                            ),
-                            const Text1(
-                              text: "назад",
-                              fontWeight: FontWeight.w400,
-                              fonSize: 16,
-                              textColor: white6,
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
-                  const SizedBox(height: 16),
-                  const Text1(
+                children: const [
+                  BB(),
+                  SizedBox(height: 16),
+                  Text1(
                     text: "Уведомления",
                     fontWeight: FontWeight.w600,
                     fonSize: 20,

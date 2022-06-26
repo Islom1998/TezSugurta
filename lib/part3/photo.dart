@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:real_project/most_used_widgets/most_used_widgets.dart';
 
 import '../constants/constant_values.dart';
-import 'HandDrawn2.dart';
+import 'hand_drawn2.dart';
 
 class Photo extends StatelessWidget {
   const Photo({Key? key}) : super(key: key);
@@ -18,41 +18,9 @@ class Photo extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Padding(
-              padding: const EdgeInsets.only(left: 9, bottom: 12),
-              child: SizedBox(
-                height: 27,
-                child: TextButton(
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
-                  style: TextButton.styleFrom(
-                    padding: EdgeInsets.zero,
-                    tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                  ),
-                  child: Container(
-                    width: 100,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(7),
-                      color: white2,
-                    ),
-                    child: Row(
-                      children: [
-                        Icon(
-                          arrowLeft,
-                          color: white6,
-                        ),
-                        const Text1(
-                          text: "назад",
-                          fontWeight: FontWeight.w400,
-                          fonSize: 16,
-                          textColor: white6,
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
+            const Padding(
+              padding: EdgeInsets.only(left: 9, bottom: 12),
+              child: BB(),
             ),
             const Padding(
               padding: EdgeInsets.only(left: 9, bottom: 23),
@@ -63,13 +31,7 @@ class Photo extends StatelessWidget {
                 textAlign: TextAlign.start,
               ),
             ),
-            Divider(
-              thickness: 1,
-              height: 0,
-              color: const Color(0xFF50639E).withOpacity(0.1),
-              indent: 7,
-              endIndent: 9,
-            ),
+            D(),
             const SizedBox(height: 16),
             const Text1(
               text: "Отправка сканов",

@@ -30,39 +30,7 @@ class _CostCalculationState extends State<CostCalculation> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const SizedBox(height: 25),
-              SizedBox(
-                height: 27,
-                child: TextButton(
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
-                  style: TextButton.styleFrom(
-                    padding: EdgeInsets.zero,
-                    tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                  ),
-                  child: Container(
-                    width: 100,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(7),
-                      color: white2,
-                    ),
-                    child: Row(
-                      children: [
-                        Icon(
-                          arrowLeft,
-                          color: white6,
-                        ),
-                        const Text1(
-                          text: "назад",
-                          fontWeight: FontWeight.w400,
-                          fonSize: 16,
-                          textColor: white6,
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
+              const BB(),
               const SizedBox(height: 12),
               const Text1(
                 text: "Рассчитать стоимость ОСАГО",
@@ -71,11 +39,7 @@ class _CostCalculationState extends State<CostCalculation> {
                 textAlign: TextAlign.start,
               ),
               const SizedBox(height: 25),
-              Divider(
-                thickness: 1,
-                color: const Color(0xFF50639E).withOpacity(0.1),
-                height: 0,
-              ),
+              D(),
               const SizedBox(height: 15),
               const Text1(
                 text: "Тариф страхования",
@@ -109,11 +73,7 @@ class _CostCalculationState extends State<CostCalculation> {
                 ),
               ),
               const SizedBox(height: 25),
-              Divider(
-                thickness: 1,
-                color: const Color(0xFF50639E).withOpacity(0.1),
-                height: 0,
-              ),
+              D(),
               const SizedBox(height: 25),
               const Text1(
                 text: "Личные данные",
@@ -224,11 +184,7 @@ class _CostCalculationState extends State<CostCalculation> {
                 ),
               ),
               const SizedBox(height: 25),
-              Divider(
-                thickness: 1,
-                color: const Color(0xFF50639E).withOpacity(0.1),
-                height: 0,
-              ),
+              D(),
               const SizedBox(height: 25),
               const Text1(
                 text: "Данные об авто",
@@ -344,11 +300,7 @@ class _CostCalculationState extends State<CostCalculation> {
                 ),
               ),
               const SizedBox(height: 25),
-              Divider(
-                thickness: 1,
-                color: const Color(0xFF50639E).withOpacity(0.1),
-                height: 0,
-              ),
+              D(),
               const SizedBox(height: 25),
               const Text1(
                 text: "Страховые случаи",

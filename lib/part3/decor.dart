@@ -17,41 +17,9 @@ class Decor extends StatelessWidget {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Padding(
-            padding: const EdgeInsets.only(left: 25, top: 25, bottom: 12),
-            child: SizedBox(
-              height: 27,
-              child: TextButton(
-                onPressed: () {
-                  Navigator.pop(context);
-                },
-                style: TextButton.styleFrom(
-                  padding: EdgeInsets.zero,
-                  tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                ),
-                child: Container(
-                  width: 100,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(7),
-                    color: white2,
-                  ),
-                  child: Row(
-                    children: [
-                      Icon(
-                        arrowLeft,
-                        color: white6,
-                      ),
-                      const Text1(
-                        text: "назад",
-                        fontWeight: FontWeight.w400,
-                        fonSize: 16,
-                        textColor: white6,
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ),
+          const Padding(
+            padding: EdgeInsets.only(left: 25, top: 25, bottom: 12),
+            child: BB(),
           ),
           const Padding(
             padding: EdgeInsets.only(left: 25, bottom: 23),
@@ -62,13 +30,7 @@ class Decor extends StatelessWidget {
               textAlign: TextAlign.start,
             ),
           ),
-          Divider(
-            height: 0,
-            thickness: 1,
-            color: const Color(0xFF50639E).withOpacity(0.1),
-            indent: 22,
-            endIndent: 25,
-          ),
+          D(),
           const Padding(
             padding: EdgeInsets.only(left: 25, top: 15, bottom: 28),
             child: Text1(

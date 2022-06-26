@@ -64,7 +64,7 @@ class MainProfile extends StatelessWidget {
                     ),
                   )),
             ),
-            Divider(thickness: 1, color: white4.withOpacity(0.5)),
+            D(color: white4, opacity: 0.5),
             TextButton(
               onPressed: () {
                 Navigator.push(

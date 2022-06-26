@@ -12,6 +12,8 @@ class Payment extends StatefulWidget {
 }
 
 class _PaymentState extends State<Payment> {
+  bool payme = true;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,41 +25,9 @@ class _PaymentState extends State<Payment> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Padding(
-              padding: const EdgeInsets.only(left: 9, top: 25, bottom: 12),
-              child: SizedBox(
-                height: 27,
-                child: TextButton(
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
-                  style: TextButton.styleFrom(
-                    padding: EdgeInsets.zero,
-                    tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                  ),
-                  child: Container(
-                    width: 100,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(7),
-                      color: white2,
-                    ),
-                    child: Row(
-                      children: [
-                        Icon(
-                          arrowLeft,
-                          color: white6,
-                        ),
-                        const Text1(
-                          text: "назад",
-                          fontWeight: FontWeight.w400,
-                          fonSize: 16,
-                          textColor: white6,
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
+            const Padding(
+              padding: EdgeInsets.only(left: 9, top: 25, bottom: 12),
+              child: BB(),
             ),
             const Padding(
               padding: EdgeInsets.only(left: 9, bottom: 15),
@@ -68,11 +38,7 @@ class _PaymentState extends State<Payment> {
                 textAlign: TextAlign.start,
               ),
             ),
-            Divider(
-              height: 0,
-              thickness: 1,
-              color: const Color(0xFF50639E).withOpacity(0.1),
-            ),
+            D(),
             const SizedBox(height: 15),
             const Text1(
               text: "Выберите способ оплаты",
@@ -80,6 +46,83 @@ class _PaymentState extends State<Payment> {
               fonSize: 20,
             ),
             const SizedBox(height: 15),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      payme = true;
+                    });
+                  },
+                  child: Container(
+                    padding: const EdgeInsets.only(left: 12, right: 35),
+                    height: 43,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(13),
+                      color: white2,
+                    ),
+                    child: Row(
+                      children: [
+                        Container(
+                          height: 19,
+                          width: 19,
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              width: payme ? 7 : 1,
+                              color: payme ? blue : white7,
+                            ),
+                            shape: BoxShape.circle,
+                            color: white1,
+                          ),
+                        ),
+                        const SizedBox(width: 16),
+                        SizedBox(
+                          height: 27,
+                          child: Image.asset("images/payme.png"),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      payme = false;
+                    });
+                  },
+                  child: Container(
+                    padding: const EdgeInsets.only(left: 12, right: 35),
+                    height: 43,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(13),
+                      color: white2,
+                    ),
+                    child: Row(
+                      children: [
+                        Container(
+                          height: 19,
+                          width: 19,
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              width: !payme ? 7 : 1,
+                              color: !payme ? blue : white7,
+                            ),
+                            shape: BoxShape.circle,
+                            color: white1,
+                          ),
+                        ),
+                        const SizedBox(width: 16),
+                        SizedBox(
+                          height: 27,
+                          child: Image.asset("images/click.png"),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            ),
             const SizedBox(height: 25),
             Container(
               width: double.infinity,

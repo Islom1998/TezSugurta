@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:real_project/most_used_widgets/most_used_widgets.dart';
-import 'package:real_project/part3/HandDrawn2.dart';
+import 'package:real_project/part3/hand_drawn2.dart';
 
 import '../constants/constant_values.dart';
 
@@ -27,41 +27,9 @@ class _HandDrawn1State extends State<HandDrawn1> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Padding(
-                  padding: const EdgeInsets.only(left: 9, top: 25, bottom: 12),
-                  child: SizedBox(
-                    height: 27,
-                    child: TextButton(
-                      onPressed: () {
-                        Navigator.pop(context);
-                      },
-                      style: TextButton.styleFrom(
-                        padding: EdgeInsets.zero,
-                        tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                      ),
-                      child: Container(
-                        width: 100,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(7),
-                          color: white2,
-                        ),
-                        child: Row(
-                          children: [
-                            Icon(
-                              arrowLeft,
-                              color: white6,
-                            ),
-                            const Text1(
-                              text: "назад",
-                              fontWeight: FontWeight.w400,
-                              fonSize: 16,
-                              textColor: white6,
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
+                const Padding(
+                  padding: EdgeInsets.only(left: 9, top: 25, bottom: 12),
+                  child: BB(),
                 ),
                 const Padding(
                   padding: EdgeInsets.only(left: 9, bottom: 25),
@@ -72,11 +40,7 @@ class _HandDrawn1State extends State<HandDrawn1> {
                     textAlign: TextAlign.start,
                   ),
                 ),
-                Divider(
-                  thickness: 1,
-                  height: 0,
-                  color: const Color(0xFF50639E).withOpacity(0.1),
-                ),
+                D(),
                 const SizedBox(height: 16),
                 const Text1(
                     text: "Введите паспортные данные",
@@ -93,11 +57,7 @@ class _HandDrawn1State extends State<HandDrawn1> {
                 const SizedBox(height: 12),
                 const TextField1(labelText: "Кем был выдан"),
                 const SizedBox(height: 25),
-                Divider(
-                  thickness: 1,
-                  height: 0,
-                  color: const Color(0xFF50639E).withOpacity(0.1),
-                ),
+                D(),
                 const SizedBox(height: 16),
                 const Text1(
                     text: "Водительские права",

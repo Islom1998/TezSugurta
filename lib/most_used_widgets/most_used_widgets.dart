@@ -24,6 +24,7 @@ class AppBar1 extends StatelessWidget implements PreferredSizeWidget {
   bool navigation;
   bool user;
   bool backPreviousPage;
+
   // ignore: prefer_typing_uninitialized_variables
   @override
   Widget build(BuildContext context) {
@@ -63,15 +64,15 @@ class AppBar1 extends StatelessWidget implements PreferredSizeWidget {
               onPressed: () {
                 navigation
                     ? (backPreviousPage
-                    ? Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => page),
-                )
-                    : Navigator.pushAndRemoveUntil(
-                  context,
-                  MaterialPageRoute(builder: (context) => page),
-                      (Route<dynamic> route) => false,
-                ))
+                        ? Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => page),
+                          )
+                        : Navigator.pushAndRemoveUntil(
+                            context,
+                            MaterialPageRoute(builder: (context) => page),
+                            (Route<dynamic> route) => false,
+                          ))
                     : Null;
               },
               backgroundColor: buttonColor,
@@ -90,10 +91,12 @@ class AppBar1 extends StatelessWidget implements PreferredSizeWidget {
       ),
       bottom: PreferredSize(
         preferredSize: const Size.fromHeight(1),
-        child: Container(
-          margin: const EdgeInsets.symmetric(horizontal: 15),
+        child: Divider(
+          height: 0,
+          thickness: 1,
           color: white4.withOpacity(0.5),
-          height: 1,
+          indent: 16,
+          endIndent: 16,
         ),
       ),
     );
@@ -608,3 +611,65 @@ class Stack1 extends StatelessWidget {
   }
 }
 
+//Back Button
+class BB extends StatelessWidget {
+  const BB({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () {
+        Navigator.pop(context);
+      },
+      child: Container(
+        height: 27,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(7),
+          color: const Color(0xFFFAFAFA),
+        ),
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: const [
+            SizedBox(width: 8),
+            Icon(
+              Icons.arrow_back_ios_new_outlined,
+              size: 16,
+              color: white6,
+            ),
+            SizedBox(width: 8),
+            Text1(
+              text: "назад",
+              fontWeight: FontWeight.w400,
+              fonSize: 16,
+              textColor: white6,
+            ),
+            SizedBox(width: 15),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+//Divider
+class D extends StatelessWidget {
+  D({
+    Key? key,
+    this.color = blue2,
+    this.opacity = 0.1,
+  }) : super(key: key);
+
+  Color color;
+  double opacity;
+
+  @override
+  Widget build(BuildContext context) {
+    return Divider(
+      height: 0,
+      thickness: 1,
+      color: color.withOpacity(opacity),
+    );
+  }
+}
