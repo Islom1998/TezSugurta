@@ -350,28 +350,7 @@ class _HomeState extends State<Home> {
                   ),
                 ),
                 const SizedBox(height: 24),
-                Container(
-                  height: 60,
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(12),
-                    color: white2,
-                  ),
-                  child: TextButton(
-                    onPressed: () {},
-                    child: Row(
-                      children: const [
-                        SizedBox(width: 8),
-                        Text1(
-                          text: "Дата начало страхования",
-                          fonSize: 16,
-                          fontWeight: FontWeight.w400,
-                          textAlign: TextAlign.start,
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
+                DataPicker(text: "Дата начало страхования"),
                 const SizedBox(height: 12),
                 Container(
                   height: 60,

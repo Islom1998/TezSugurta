@@ -1,5 +1,6 @@
 // ignore_for_file: must_be_immutable
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../constants/constant_values.dart';
 
@@ -290,7 +291,7 @@ class TextField1 extends StatelessWidget {
       height: 60,
       child: number
           ? TextFormField(
-              keyboardType: TextInputType.number,
+              keyboardType: TextInputType.phone,
               decoration: InputDecoration(
                   labelText: labelText,
                   labelStyle: TextStyle(
@@ -670,6 +671,119 @@ class D extends StatelessWidget {
       height: 0,
       thickness: 1,
       color: color.withOpacity(opacity),
+    );
+  }
+}
+
+//DataPicker
+class DataPicker extends StatefulWidget {
+  DataPicker({Key? key, required this.text}) : super(key: key);
+  String text;
+
+  @override
+  State<DataPicker> createState() => _DataPickerState();
+}
+
+class _DataPickerState extends State<DataPicker> {
+  DateTime selectedDate = DateTime.now();
+  String d = '';
+  String m = '';
+  bool selected = false;
+
+  @override
+  Widget build(BuildContext context) {
+    d = selectedDate.day < 10 ? '0' : '';
+    m = selectedDate.month < 10 ? '0' : '';
+    String date =
+        '$d${selectedDate.day}.$m${selectedDate.month}.${selectedDate.year}';
+    return TextButton(
+      onPressed: () {
+        showDatePicker();
+      },
+      style: TextButton.styleFrom(padding: EdgeInsets.zero),
+      child: Container(
+        height: 60,
+        width: double.infinity,
+        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(12),
+          color: white2,
+        ),
+        child: selected
+            ? Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text1(
+                    text: widget.text,
+                    fontWeight: FontWeight.w400,
+                    fonSize: 14,
+                    opacity: 0.5,
+                  ),
+                  const SizedBox(height: 4),
+                  Text1(text: date, fontWeight: FontWeight.w400, fonSize: 16)
+                ],
+              )
+            : Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text1(
+                    text: widget.text,
+                    fontWeight: FontWeight.w400,
+                    fonSize: 16,
+                  ),
+                  Icon(
+                    arrowRight,
+                    color: white5,
+                  ),
+                ],
+              ),
+      ),
+    );
+  }
+
+  void showDatePicker() {
+    showCupertinoModalPopup(
+      context: context,
+      builder: (BuildContext builder) {
+        return Container(
+          height: 300,
+          color: Colors.white,
+          child: Column(
+            children: [
+              SizedBox(
+                height: 200,
+                child: CupertinoDatePicker(
+                  mode: CupertinoDatePickerMode.date,
+                  onDateTimeChanged: (value) {
+                    if (value != selectedDate) {
+                      setState(
+                        () {
+                          selectedDate = value;
+                        },
+                      );
+                    }
+                  },
+                  initialDateTime: DateTime.now(),
+                  minimumYear: 1900,
+                  maximumYear: DateTime.now().year,
+                ),
+              ),
+              TextButton(
+                onPressed: () {
+                  setState(() {
+                    selected = true;
+                    Navigator.pop(context);
+                  });
+                },
+                child: const Text(
+                  "done",
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+                ),
+              ),
+            ],
+          ),
+        );
+      },
     );
   }
 }

@@ -171,11 +171,7 @@ class MyData1 extends StatelessWidget {
                 const SizedBox(height: 8),
                 const TextField1(labelText: "Фамилия"),
                 const SizedBox(height: 8),
-                Button2(
-                  text: "День рождения",
-                  page: const Text(''),
-                  arrowIcon: arrowRight,
-                ),
+                DataPicker(text: "День рождения"),
                 const SizedBox(height: 32),
                 const Button1(
                   text: "Сохранить",

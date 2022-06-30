@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:real_project/most_used_widgets/most_used_widgets.dart';
 import 'package:real_project/part3/hand_drawn2.dart';
 
-import '../constants/constant_values.dart';
 
 class HandDrawn1 extends StatefulWidget {
   const HandDrawn1({Key? key}) : super(key: key);
@@ -49,11 +48,7 @@ class _HandDrawn1State extends State<HandDrawn1> {
                 const SizedBox(height: 20),
                 const TextField1(labelText: "Серия и номер пасспорта"),
                 const SizedBox(height: 12),
-                Button2(
-                  text: "Дата выдачи паспорта",
-                  page: const Text(''),
-                  arrowIcon: arrowRight,
-                ),
+                DataPicker(text: "Дата выдачи паспорта"),
                 const SizedBox(height: 12),
                 const TextField1(labelText: "Кем был выдан"),
                 const SizedBox(height: 25),
@@ -66,11 +61,7 @@ class _HandDrawn1State extends State<HandDrawn1> {
                 const SizedBox(height: 20),
                 const TextField1(labelText: "Серия и номер пасспорта"),
                 const SizedBox(height: 12),
-                Button2(
-                  text: "Дата выдачи паспорта",
-                  page: const Text(''),
-                  arrowIcon: arrowRight,
-                ),
+                DataPicker(text: "Дата выдачи паспорта"),
                 const SizedBox(height: 12),
                 const TextField1(labelText: "Кем был выдан"),
                 const SizedBox(height: 25),

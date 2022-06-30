@@ -3,9 +3,14 @@ import 'package:real_project/constants/constant_values.dart';
 import 'package:real_project/most_used_widgets/most_used_widgets.dart';
 import 'package:real_project/part3/home.dart';
 
-class Reg1 extends StatelessWidget {
+class Reg1 extends StatefulWidget {
   const Reg1({Key? key}) : super(key: key);
 
+  @override
+  State<Reg1> createState() => _Reg1State();
+}
+
+class _Reg1State extends State<Reg1> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -60,11 +65,7 @@ class Reg1 extends StatelessWidget {
                   const SizedBox(height: 12),
                   const TextField1(labelText: "Фамилия"),
                   const SizedBox(height: 12),
-                  Button2(
-                    text: "День рождения",
-                    page: const Text(''),
-                    arrowIcon: arrowRight,
-                  ),
+                  DataPicker(text: 'День рождения'),
                   const SizedBox(height: 12),
                   const TextField1(
                     labelText: "Пароль",
@@ -90,3 +91,5 @@ class Reg1 extends StatelessWidget {
     );
   }
 }
+
+

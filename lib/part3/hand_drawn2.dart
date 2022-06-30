@@ -106,27 +106,7 @@ class _HandDrawn2State extends State<HandDrawn2> {
                 ),
               ),
               const SizedBox(height: 12),
-              Container(
-                height: 60,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(12),
-                  color: white2,
-                ),
-                child: TextButton(
-                  onPressed: () {},
-                  child: Row(
-                    children: const [
-                      Text1(
-                        text: "Дата начало страхования",
-                        fonSize: 16,
-                        fontWeight: FontWeight.w400,
-                        textAlign: TextAlign.start,
-                      ),
-                    ],
-                  ),
-                ),
-              ),
+              DataPicker(text: "Дата начало страхования"),
               const SizedBox(height: 12),
               Container(
                 height: 60,
